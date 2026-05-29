@@ -268,3 +268,19 @@ a:hover{
   margin:10px 0 0 0;
   text-align:center;
 }
+.film-poster{
+  width:320px;
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+@media (max-width:600px){
+
+  .film-poster{
+    width:240px;
+    max-width:85%;
+    margin:0 auto;
+  }
+
+}
