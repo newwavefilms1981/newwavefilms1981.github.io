@@ -2,6 +2,10 @@
   box-sizing:border-box;
 }
 
+html{
+  background:#000;
+}
+
 body{
 
   margin:0;
@@ -20,8 +24,6 @@ body{
   background-size:cover;
 
   background-position:center;
-
-  background-attachment:fixed;
 
   overflow-x:hidden;
 }
@@ -52,15 +54,13 @@ body::before{
   z-index:0;
 }
 
-/* CONTENIDO SIEMPRE ENCIMA DE LA VIÑETA */
+/* CONTENIDO ENCIMA */
 
 .film-page,
 .logo,
 .container,
 .film-container,
-.film-footer,
-.intro,
-.contact{
+.film-footer{
 
   position:relative;
   z-index:1;
@@ -435,11 +435,6 @@ iframe{
 
 @media (max-width:600px){
 
-  body{
-
-    background-attachment:scroll;
-  }
-
   .logo img{
 
     width:150px;
@@ -488,6 +483,7 @@ iframe{
     width:88%;
 
     max-width:420px;
+
     margin:0 auto;
   }
 
@@ -496,6 +492,7 @@ iframe{
     width:88%;
 
     max-width:420px;
+
     margin:0 auto;
   }
 
