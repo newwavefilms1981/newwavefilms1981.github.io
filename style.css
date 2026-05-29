@@ -7,59 +7,25 @@ html, body{
   height:100%;
   background:#000;
   font-family:'IBM Plex Serif', serif;
-  color:#d8c98a;
+  color:#ffffff;
   overflow-x:hidden;
 }
 
 /* =========================
-   FONDO ORIGINAL (ESTABLE)
+   ENLACES (RESET GLOBAL)
 ========================= */
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-
-  background:
-    url("img/fondo.webp") center / cover no-repeat;
-
-  z-index:0;
+a{
+  color:#ffffff;
+  text-decoration:none;
 }
 
-/* =========================
-   VIÑETA (OPCIONAL PERO SUAVE)
-========================= */
-
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-
-  background:
-    radial-gradient(
-      circle,
-      transparent 45%,
-      rgba(0,0,0,0.75) 100%
-    );
-
-  z-index:1;
+a:visited{
+  color:#ffffff;
 }
 
-/* =========================
-   CONTENIDO
-========================= */
-
-.logo,
-.container,
-.film-page,
-.film-container,
-.film-footer,
-.intro,
-.contact{
-
-  position:relative;
-  z-index:2;
+a:hover{
+  color:#f5e6aa;
 }
 
 /* =========================
@@ -93,44 +59,54 @@ body::after{
 }
 
 /* =========================
-   INDEX
+   MENÚ / INDEX (CARDS)
 ========================= */
 
 .container{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-  gap:50px;
+  gap:0;
   max-width:1200px;
   margin:40px auto;
-  padding:0 40px 40px 40px;
+  padding:0;
 }
 
 .card{
-  text-decoration:none;
-  color:#d8c98a;
+  display:block;
+  padding:20px;
+
+  border:1px solid #333;
+  background:rgba(0,0,0,0.35);
+
+  transition:0.3s;
+  color:#ffffff;
+}
+
+.card:hover{
+  border-color:#f5e6aa;
+  background:rgba(0,0,0,0.55);
 }
 
 .card img{
   width:100%;
   display:block;
-  border:1px solid #333;
-  transition:0.3s;
-}
-
-.card img:hover{
-  transform:scale(1.02);
-  border-color:#777;
+  margin-bottom:12px;
+  border:0;
 }
 
 .card p{
-  margin-top:14px;
+  margin:0;
   font-size:14px;
-  line-height:1.8;
+  line-height:1.6;
   color:#ffffff;
 }
 
+.card:hover p{
+  color:#f5e6aa;
+}
+
 /* =========================
-   FILMS
+   FILM PAGES
 ========================= */
 
 .film-page{
@@ -157,8 +133,16 @@ body::after{
   color:#d0c28a;
 }
 
+/* TITULOS */
+
+.film-text h2{
+  color:#f5e6aa;
+  font-weight:300;
+  letter-spacing:2px;
+}
+
 /* =========================
-   IMÁGENES Y VÍDEO
+   IMÁGENES / VÍDEO
 ========================= */
 
 .museum-photo{
@@ -187,6 +171,28 @@ body::after{
 }
 
 /* =========================
+   CONTACTO
+========================= */
+
+.contact{
+  text-align:center;
+  padding:20px 20px 50px 20px;
+  font-size:15px;
+  color:#ffffff;
+}
+
+.contact a{
+  color:#ffffff;
+  border-bottom:1px solid transparent;
+  transition:0.3s;
+}
+
+.contact a:hover{
+  color:#f5e6aa;
+  border-bottom:1px solid #f5e6aa;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -199,13 +205,13 @@ body::after{
 .back{
   display:inline-block;
   margin-top:14px;
-  color:#c7d7a1;
+  color:#ffffff;
   text-decoration:none;
   font-size:12px;
 }
 
 .back:hover{
-  color:#fff;
+  color:#f5e6aa;
 }
 
 /* =========================
