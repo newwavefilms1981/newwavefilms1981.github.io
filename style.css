@@ -3,16 +3,16 @@
 }
 
 html, body{
-  height:100%;
   margin:0;
+  height:100%;
   background:#000;
-  overflow-x:hidden;
   font-family:'IBM Plex Serif', serif;
   color:#d8c98a;
+  overflow-x:hidden;
 }
 
 /* =========================
-   FONDO (BLINDADO)
+   FONDO ORIGINAL (ESTABLE)
 ========================= */
 
 body::before{
@@ -21,20 +21,13 @@ body::before{
   inset:0;
 
   background:
-    linear-gradient(
-      rgba(0,0,0,0.25),
-      rgba(0,0,0,0.45)
-    ),
     url("img/fondo.webp") center / cover no-repeat;
 
-  transform: translateZ(0);
-  will-change: transform;
-
-  z-index:-2;
+  z-index:0;
 }
 
 /* =========================
-   VIÑETA
+   VIÑETA (OPCIONAL PERO SUAVE)
 ========================= */
 
 body::after{
@@ -47,26 +40,26 @@ body::after{
     radial-gradient(
       circle,
       transparent 45%,
-      rgba(0,0,0,0.78) 100%
+      rgba(0,0,0,0.75) 100%
     );
 
-  z-index:-1;
+  z-index:1;
 }
 
 /* =========================
    CONTENIDO
 ========================= */
 
-.film-page,
 .logo,
 .container,
+.film-page,
 .film-container,
 .film-footer,
 .intro,
 .contact{
 
   position:relative;
-  z-index:1;
+  z-index:2;
 }
 
 /* =========================
@@ -74,7 +67,6 @@ body::after{
 ========================= */
 
 .logo{
-
   width:100%;
   display:flex;
   justify-content:center;
@@ -82,9 +74,7 @@ body::after{
 }
 
 .logo img{
-
   width:190px;
-  display:block;
   max-width:90%;
 }
 
@@ -93,7 +83,6 @@ body::after{
 ========================= */
 
 .intro{
-
   max-width:760px;
   margin:30px auto 10px auto;
   padding:0 30px;
@@ -108,7 +97,6 @@ body::after{
 ========================= */
 
 .container{
-
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
   gap:50px;
@@ -118,13 +106,11 @@ body::after{
 }
 
 .card{
-
   text-decoration:none;
   color:#d8c98a;
 }
 
 .card img{
-
   width:100%;
   display:block;
   border:1px solid #333;
@@ -132,38 +118,14 @@ body::after{
 }
 
 .card img:hover{
-
   transform:scale(1.02);
   border-color:#777;
 }
 
 .card p{
-
   margin-top:14px;
   font-size:14px;
   line-height:1.8;
-  color:#ffffff;
-}
-
-/* =========================
-   CONTACTO
-========================= */
-
-.contact{
-
-  text-align:center;
-  padding:20px 20px 50px 20px;
-  font-size:15px;
-  color:#ffffff;
-}
-
-.contact a{
-
-  color:#fff0b3;
-  text-decoration:none;
-}
-
-.contact a:hover{
   color:#ffffff;
 }
 
@@ -172,13 +134,11 @@ body::after{
 ========================= */
 
 .film-page{
-
   min-height:100vh;
   padding:30px;
 }
 
 .film-container{
-
   display:flex;
   justify-content:center;
   align-items:flex-start;
@@ -188,67 +148,28 @@ body::after{
   padding:20px 40px;
 }
 
-.film-poster{
-
-  width:320px;
-  max-width:100%;
-  border:1px solid #333;
-  display:block;
-}
-
-.film-text{
-
+.film-text,
+.museum-text{
   width:100%;
   max-width:600px;
   font-size:14px;
   line-height:1.9;
   color:#d0c28a;
-  overflow-wrap:break-word;
-}
-
-.museum-text{
-
-  width:100%;
-  max-width:600px;
-  overflow-wrap:break-word;
 }
 
 /* =========================
-   TITULOS
-========================= */
-
-.film-text h2{
-
-  color:#f1de9b;
-  font-weight:300;
-  letter-spacing:2px;
-}
-
-/* =========================
-   IMÁGENES / VÍDEO
+   IMÁGENES Y VÍDEO
 ========================= */
 
 .museum-photo{
-
   text-align:center;
   margin:35px 0;
 }
 
-.museum-photo img{
-
-  width:100%;
-  max-width:520px;
-  height:auto;
-  border:1px solid #333;
-  display:block;
-  margin:0 auto;
-}
-
+.museum-photo img,
 .museum-video{
-
   width:100%;
   max-width:520px;
-  height:auto;
   display:block;
   margin:0 auto;
   border:1px solid #333;
@@ -260,45 +181,9 @@ body::after{
 ========================= */
 
 .caption{
-
   font-size:12px;
   color:#b8b8b8;
   margin-top:8px;
-}
-
-/* =========================
-   IFRAME
-========================= */
-
-iframe{
-
-  width:100%;
-  max-width:1000px;
-  display:block;
-  margin:0 auto;
-}
-
-/* =========================
-   CONTROLES
-========================= */
-
-.controls{
-
-  text-align:center;
-  margin-top:30px;
-}
-
-.controls a{
-
-  display:inline-block;
-  margin:0 10px;
-  color:#c7d7a1;
-  text-decoration:none;
-  font-size:12px;
-}
-
-.controls a:hover{
-  color:#fff;
 }
 
 /* =========================
@@ -306,29 +191,12 @@ iframe{
 ========================= */
 
 .film-footer{
-
   width:100%;
   text-align:center;
   margin-top:50px;
 }
 
-.watch{
-
-  display:inline-block;
-  padding:10px 16px;
-  border:1px solid #b7c98d;
-  color:#dce8bb;
-  text-decoration:none;
-  font-size:12px;
-}
-
-.watch:hover{
-  color:#fff;
-  border-color:#fff;
-}
-
 .back{
-
   display:inline-block;
   margin-top:14px;
   color:#c7d7a1;
@@ -347,15 +215,10 @@ iframe{
 @media (max-width:900px){
 
   .film-container{
-
     flex-direction:column;
     align-items:center;
     text-align:center;
     padding:20px;
-  }
-
-  iframe{
-    height:260px;
   }
 }
 
@@ -367,45 +230,18 @@ iframe{
 
   .intro{
     font-size:14px;
-    line-height:1.8;
     padding:0 20px;
-  }
-
-  .film-page{
-    padding:20px 10px;
-  }
-
-  .film-poster{
-    width:240px;
   }
 
   .film-text,
   .museum-text{
-
-    width:100%;
     max-width:100%;
-    font-size:14px;
-    line-height:1.8;
     padding:0 12px;
-  }
-
-  .museum-photo{
-    margin:30px 0;
   }
 
   .museum-photo img,
   .museum-video{
-
     width:88%;
     max-width:420px;
-    margin:0 auto;
-  }
-
-  .contact{
-    font-size:14px;
-  }
-
-  iframe{
-    height:220px;
   }
 }
